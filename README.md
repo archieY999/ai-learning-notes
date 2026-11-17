@@ -9,3 +9,4 @@
 - notes/git-notes.md 四层模型与分支
 - notes/summary.md 学习总结 · 下一步：冲突与远程
 - notes/summary.md 学习总结 · 已掌握到分支
+> 2026-11-17 首次 push 成功。origin/main 只是本地缓存，不是实时状态。

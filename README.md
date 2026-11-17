@@ -7,3 +7,4 @@
 
 ## 笔记索引
 - notes/git-notes.md 四层模型与分支
+- notes/summary.md 学习总结 · 下一步：冲突与远程

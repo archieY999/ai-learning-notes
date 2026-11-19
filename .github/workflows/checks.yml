@@ -1,0 +1,27 @@
+name: docs-check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 拉取代码
+        uses: actions/checkout@v4
+
+      - name: 检查 README 里引用的笔记文件是否存在
+        run: |
+          missing=0
+          for f in $(grep -o 'notes/[A-Za-z0-9._-]*\.md' README.md | sort -u); do
+            if [ -f "$f" ]; then
+              echo "ok  $f"
+            else
+              echo "::error::README 引用了不存在的文件：$f"
+              missing=1
+            fi
+          done
+          exit $missing

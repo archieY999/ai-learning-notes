@@ -16,7 +16,7 @@ jobs:
       - name: 检查 README 里引用的笔记文件是否存在
         run: |
           missing=0
-          for f in $(grep -o 'notes/[A-Za-z0-9._-]*\.md' README.md | sort -u); do
+          for f in $(grep -o 'notes/[^$$:space:$$]*\.md' README.md | sort -u); do
             if [ -f "$f" ]; then
               echo "ok  $f"
             else
